@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap');
 *{
     box-sizing: border-box;
+    padding-left: 0;
 }
 body{
     font-family: 'Raleway', sans-serif;
@@ -9,7 +10,16 @@ body{
 }
 header{
     text-align: center;
-    border: 2px solid #ccc;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0,.5);
+    position: fixed;
+    width: 100%;
+    background-color: #ffffff;
+    top: 0;
+    left: 0;
+}
+main,main#contact{
+    
+    margin-top: 150px;
 }
 header h1{
     text-transform: uppercase;
@@ -24,6 +34,7 @@ header ul li{
     color: #555;
 }
 
+
 section#banner{
     background-image: url("../img/jane.jpg");
     background-repeat: no-repeat;
@@ -35,21 +46,18 @@ section#banner{
 }
 
 main#about{
-    width: 100%;
+   /* width: 900px;
     height: 73vh;
-    text-align: left;
+    margin: 0 auto;*/
+    text-align: center;
 }
-main#music{
-    width: 60%;
-    height: 130vh;
-    text-align: left;
-    margin: 0 auto;
-}
+
+
+
 main#contact{
-    width: 900px;
+    
     height: 90hv;
     text-align: center;
-    margin: 30px auto;
 }
 main video{
     width: 320px;
@@ -57,8 +65,8 @@ main video{
 }
 
 main img{
-    width: 30%;
-    height: 250px;
+    width: 450px;
+    margin: 20px auto;
 }
 footer p{
     padding: 10px;
@@ -68,12 +76,16 @@ footer p{
     /*clear: both;*/
 }
 
+
 /* Home V2*/
 
 section#concept,
-section#songs{
+section#songs,
+section#music,
+main#contact{
     width: 900px;
     margin: 30px auto;
+    max-width: 100%;
 }
 section#song img{
     width: 100%;
@@ -120,7 +132,6 @@ form textarea{
     resize: none;
 }
 
-
 form button{
     background: orange;
     color: white;
@@ -132,7 +143,10 @@ form button{
     padding-left: 20px;
 }
 
-
+main,main#contact{
+    
+    margin-top: 150px;
+}
 
 /*
 section#info_mapa label{
@@ -144,3 +158,79 @@ div.form_group input{
 }
 
 */
+
+/*posicionamento e responsividade*/
+
+
+@media (max-width: 900px){
+    section#concept,
+    section#songs {
+        padding: 0 40px;
+    }
+
+    header ul li{
+        font-size: 20px;
+    }
+    h2{
+        font-size: 32px;
+        text-align: center;
+    }
+    p{
+        font-size:18px;
+        text-align: justify;
+    }
+}
+
+@media(max-width: 768px){
+    .duas_colunas>div{
+        width: 100%;
+    }
+    section#songs ol li{
+        font-size: 24px;
+    }
+    
+    main#music{
+        padding: 0 40px;
+        width: 900px;
+        margin: 0 auto;
+    }
+
+
+    main#music video{
+        width: 100%;
+    }
+
+    main#contact{
+        padding: 0 40px;
+    }
+    
+    main#contact form,
+    main#contact form input,
+    main#contact form textarea{
+        font-size:24px;
+    }
+    main#contact form .form_group{
+        margin-bottom:20px;
+    }
+    h1{
+        font-size: 32px;
+        text-align: center;
+    }
+    form button{
+        padding: 15px 60px;
+        font-size: 15px;
+    }
+    #mapa{
+        padding-left: 0;
+    }
+}
+
+@media(max-width:415px){
+    main#about >p{
+        text-align: center;
+    }
+    main#about img{
+        width: 100%;
+        padding: 20px 20px;
+    }
+}
